@@ -1,0 +1,43 @@
+Author: Pierre Thibault (pierre.thibault1 -at- gmail.com)
+License: MIT
+Since: 2011-04-26
+
+NAME
+       insert_imports - add the necessary dead code for web2py controllers and
+       models to avoid warnings and errors from the Eclipse Pydev static code
+       analyzer.
+
+SYNOPSIS
+       insert_imports [OPTION]... FILE...
+
+DESCRIPTION
+
+This script is made for people using the web2py framework with Eclipse and 
+Pydev. It inserts the dead code necessary to avoid the warnings and errors
+reported by Pydev due to the missing web2py imports. Web2py does automatically
+insert a set of common imports for models and controllers so the user does not
+have to explicitly import them in the code. This cause a problem with Pydev
+since from a Pythonic point of view, these imports are missing and the static
+code analyzer reports the issue as warnings or errors. This script was made to
+automate the process of adding the necessary dead code to suppress these
+warnings and errors.
+
+The script is made to be used as a tool to be added in your PATH. Just call the
+tool with the files to process as arguments. It will add the code just before
+the Python code or at the end of the file unless the mark "STATIC_IMPORT_MARK"
+(with or without quotes) is present in the file.
+
+OPTION
+    -h,  --help          Display this help message.
+
+TIPS:
+
+Use the power of the shell. For example if you are located in the applications
+directory of web2py, you can use:
+
+    insert_imports */controllers/*.py
+    insert_imports */models/*.py
+    
+to process all the controllers and all the models for all applications.
+
+Project site: https://code.google.com/p/neo-insert-imports/

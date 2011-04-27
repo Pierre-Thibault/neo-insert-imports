@@ -1,0 +1,9 @@
+Insert-Imports Installation:
+
+This is script is made to be used as a tool. 
+
+To install as a tool (POSIX):
+
+1) Copy "insert_imports.py" somewhere in your path.
+2) Rename the file as "insert_imports" if you prefer.
+3) Make the file executable "chmod +x insert_imports".
